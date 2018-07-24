@@ -17,7 +17,11 @@
 		AA31A6D62106473100A90B1B /* CountryAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA31A6D52106473100A90B1B /* CountryAppTests.swift */; };
 		AA31A6E12106473100A90B1B /* CountryAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA31A6E02106473100A90B1B /* CountryAppUITests.swift */; };
 		AA31A6F32106530C00A90B1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA31A6F22106530C00A90B1B /* ViewController.swift */; };
-		AA31A6F42106530C00A90B1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA31A6F22106530C00A90B1B /* ViewController.swift */; };
+		AA6367AB2106FE8E00F0B540 /* CountryInfoWebAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6367AA2106FE8E00F0B540 /* CountryInfoWebAPI.swift */; };
+		AA6367AD2106FFF100F0B540 /* CountryInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6367AC2106FFF100F0B540 /* CountryInfoModel.swift */; };
+		AA6367AE21070E6900F0B540 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA31A6F22106530C00A90B1B /* ViewController.swift */; };
+		AA6367AF21070E6F00F0B540 /* CountryInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6367AC2106FFF100F0B540 /* CountryInfoModel.swift */; };
+		AA6367B021070E7500F0B540 /* CountryInfoWebAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6367AA2106FE8E00F0B540 /* CountryInfoWebAPI.swift */; };
 		AA6B26142106691700389873 /* WebServiceWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6B26132106691700389873 /* WebServiceWrapper.swift */; };
 		AA6B26152106691700389873 /* WebServiceWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6B26132106691700389873 /* WebServiceWrapper.swift */; };
 		B3231A236221D49F6B9E4E17 /* Pods_CountryAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A8D35CD208FA5F8FD387E7 /* Pods_CountryAppTests.framework */; };
@@ -74,6 +78,8 @@
 		AA31A6E02106473100A90B1B /* CountryAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryAppUITests.swift; sourceTree = "<group>"; };
 		AA31A6E22106473100A90B1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA31A6F22106530C00A90B1B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AA6367AA2106FE8E00F0B540 /* CountryInfoWebAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryInfoWebAPI.swift; sourceTree = "<group>"; };
+		AA6367AC2106FFF100F0B540 /* CountryInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryInfoModel.swift; sourceTree = "<group>"; };
 		AA6B26132106691700389873 /* WebServiceWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceWrapper.swift; sourceTree = "<group>"; };
 		B8A8D35CD208FA5F8FD387E7 /* Pods_CountryAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CountryAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D64D2CDAF0E1E010F20E38CC /* Pods-CountryAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountryAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CountryAppUITests/Pods-CountryAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +145,7 @@
 				AA31A6F02106528500A90B1B /* Model */,
 				AA31A6F12106528500A90B1B /* Resources */,
 				AA31A6EE2106528500A90B1B /* View */,
+				AA6367A92106FE4E00F0B540 /* WebServiceAccessLayer */,
 				AA6B2612210668ED00389873 /* Wrapper */,
 				AA31A6C72106473100A90B1B /* Assets.xcassets */,
 				AA31A6C92106473100A90B1B /* LaunchScreen.storyboard */,
@@ -184,6 +191,7 @@
 		AA31A6F02106528500A90B1B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AA6367AC2106FFF100F0B540 /* CountryInfoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -193,6 +201,14 @@
 			children = (
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		AA6367A92106FE4E00F0B540 /* WebServiceAccessLayer */ = {
+			isa = PBXGroup;
+			children = (
+				AA6367AA2106FE8E00F0B540 /* CountryInfoWebAPI.swift */,
+			);
+			path = WebServiceAccessLayer;
 			sourceTree = "<group>";
 		};
 		AA6B2612210668ED00389873 /* Wrapper */ = {
@@ -437,7 +453,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA6367AB2106FE8E00F0B540 /* CountryInfoWebAPI.swift in Sources */,
 				AA31A6F32106530C00A90B1B /* ViewController.swift in Sources */,
+				AA6367AD2106FFF100F0B540 /* CountryInfoModel.swift in Sources */,
 				AA31A6C62106473000A90B1B /* CountryApp.xcdatamodeld in Sources */,
 				AA6B26142106691700389873 /* WebServiceWrapper.swift in Sources */,
 				AA31A6BE2106473000A90B1B /* AppDelegate.swift in Sources */,
@@ -448,8 +466,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA31A6F42106530C00A90B1B /* ViewController.swift in Sources */,
+				AA6367B021070E7500F0B540 /* CountryInfoWebAPI.swift in Sources */,
+				AA6367AE21070E6900F0B540 /* ViewController.swift in Sources */,
 				AA6B26152106691700389873 /* WebServiceWrapper.swift in Sources */,
+				AA6367AF21070E6F00F0B540 /* CountryInfoModel.swift in Sources */,
 				AA31A6D62106473100A90B1B /* CountryAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
