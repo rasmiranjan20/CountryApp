@@ -24,6 +24,14 @@
 		AA6367B021070E7500F0B540 /* CountryInfoWebAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6367AA2106FE8E00F0B540 /* CountryInfoWebAPI.swift */; };
 		AA6B26142106691700389873 /* WebServiceWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6B26132106691700389873 /* WebServiceWrapper.swift */; };
 		AA6B26152106691700389873 /* WebServiceWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6B26132106691700389873 /* WebServiceWrapper.swift */; };
+		AAE73B502107C24A001DF103 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE73B4F2107C24A001DF103 /* CountryTableViewCell.swift */; };
+		AAE73B512107C2C7001DF103 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE73B4F2107C24A001DF103 /* CountryTableViewCell.swift */; };
+		AAE73B532107C7B3001DF103 /* CountryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE73B522107C7B3001DF103 /* CountryCellViewModel.swift */; };
+		AAE73B552107C7D5001DF103 /* ViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE73B542107C7D5001DF103 /* ViewControllerViewModel.swift */; };
+		AAE73B562107C9CE001DF103 /* ViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE73B542107C7D5001DF103 /* ViewControllerViewModel.swift */; };
+		AAE73B572107C9D7001DF103 /* CountryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE73B522107C7B3001DF103 /* CountryCellViewModel.swift */; };
+		AAE73B602107D062001DF103 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE73B5F2107D062001DF103 /* ImageDownloader.swift */; };
+		AAE73B612107D07D001DF103 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE73B5F2107D062001DF103 /* ImageDownloader.swift */; };
 		B3231A236221D49F6B9E4E17 /* Pods_CountryAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A8D35CD208FA5F8FD387E7 /* Pods_CountryAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +89,10 @@
 		AA6367AA2106FE8E00F0B540 /* CountryInfoWebAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryInfoWebAPI.swift; sourceTree = "<group>"; };
 		AA6367AC2106FFF100F0B540 /* CountryInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryInfoModel.swift; sourceTree = "<group>"; };
 		AA6B26132106691700389873 /* WebServiceWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceWrapper.swift; sourceTree = "<group>"; };
+		AAE73B4F2107C24A001DF103 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
+		AAE73B522107C7B3001DF103 /* CountryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCellViewModel.swift; sourceTree = "<group>"; };
+		AAE73B542107C7D5001DF103 /* ViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerViewModel.swift; sourceTree = "<group>"; };
+		AAE73B5F2107D062001DF103 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		B8A8D35CD208FA5F8FD387E7 /* Pods_CountryAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CountryAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D64D2CDAF0E1E010F20E38CC /* Pods-CountryAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountryAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CountryAppUITests/Pods-CountryAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DCC91C5ECDAEFEF11BA9F350 /* Pods-CountryAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountryAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CountryAppUITests/Pods-CountryAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -177,6 +189,9 @@
 			isa = PBXGroup;
 			children = (
 				AA31A6F22106530C00A90B1B /* ViewController.swift */,
+				AAE73B542107C7D5001DF103 /* ViewControllerViewModel.swift */,
+				AAE73B522107C7B3001DF103 /* CountryCellViewModel.swift */,
+				AAE73B4F2107C24A001DF103 /* CountryTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -184,6 +199,7 @@
 		AA31A6EF2106528500A90B1B /* Constraints */ = {
 			isa = PBXGroup;
 			children = (
+				AAE73B5F2107D062001DF103 /* ImageDownloader.swift */,
 			);
 			path = Constraints;
 			sourceTree = "<group>";
@@ -458,6 +474,10 @@
 				AA6367AD2106FFF100F0B540 /* CountryInfoModel.swift in Sources */,
 				AA31A6C62106473000A90B1B /* CountryApp.xcdatamodeld in Sources */,
 				AA6B26142106691700389873 /* WebServiceWrapper.swift in Sources */,
+				AAE73B532107C7B3001DF103 /* CountryCellViewModel.swift in Sources */,
+				AAE73B602107D062001DF103 /* ImageDownloader.swift in Sources */,
+				AAE73B502107C24A001DF103 /* CountryTableViewCell.swift in Sources */,
+				AAE73B552107C7D5001DF103 /* ViewControllerViewModel.swift in Sources */,
 				AA31A6BE2106473000A90B1B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,10 +486,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAE73B512107C2C7001DF103 /* CountryTableViewCell.swift in Sources */,
 				AA6367B021070E7500F0B540 /* CountryInfoWebAPI.swift in Sources */,
 				AA6367AE21070E6900F0B540 /* ViewController.swift in Sources */,
 				AA6B26152106691700389873 /* WebServiceWrapper.swift in Sources */,
 				AA6367AF21070E6F00F0B540 /* CountryInfoModel.swift in Sources */,
+				AAE73B572107C9D7001DF103 /* CountryCellViewModel.swift in Sources */,
+				AAE73B562107C9CE001DF103 /* ViewControllerViewModel.swift in Sources */,
+				AAE73B612107D07D001DF103 /* ImageDownloader.swift in Sources */,
 				AA31A6D62106473100A90B1B /* CountryAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

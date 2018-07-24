@@ -8,7 +8,7 @@
 
 import UIKit
 
- class CountryInfoModel: NSObject, Decodable {
+ class CountryInfoModel: NSObject {
     var title               = ""
    var countryDescription   = ""
    var imageHref            = ""

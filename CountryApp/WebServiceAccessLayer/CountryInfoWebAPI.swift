@@ -45,8 +45,8 @@ class CountryInfoWebAPI: NSObject {
                     title = dictionary["title"] as? String ?? ""
                     
                     if let infoArray = dictionary["rows"] as? [[String : Any]] {
-                        let country = CountryInfoModel()
                         for infoDictionary in infoArray {
+                            let country = CountryInfoModel()
                             country.title               = infoDictionary["title"] as? String ?? ""
                             country.countryDescription  = infoDictionary["description"] as? String ?? ""
                             country.imageHref           = infoDictionary["imageHref"] as? String ?? ""
