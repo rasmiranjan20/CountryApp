@@ -11,15 +11,40 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableCountry: UITableView!
+    @IBOutlet weak var collectionCountry: UICollectionView!
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     lazy var viewModel = ViewControllerViewModel(data:(nil, nil))
-    
+    lazy var refreshControl = UIRefreshControl()
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableCountry.rowHeight = UITableViewAutomaticDimension
+        validateView()
         // Do any additional setup after loading the view, typically from a nib.
         fetchCountryData()
     }
-
+    
+    func validateView() {
+        refreshControl.addTarget(self, action: #selector(reloadRefreshControl(control:)), for: .valueChanged)
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            collectionCountry.dataSource    = self
+            collectionCountry.delegate      = self
+            collectionCountry.addSubview(refreshControl)
+            flowLayout.estimatedItemSize    = UICollectionViewFlowLayoutAutomaticSize
+            tableCountry.isHidden           = true
+            collectionCountry.isHidden      = false
+        } else {
+            tableCountry.dataSource         = self
+            tableCountry.delegate           = self
+            tableCountry.tableHeaderView    = refreshControl
+            tableCountry.rowHeight          = UITableViewAutomaticDimension
+            tableCountry.isHidden           = false
+            collectionCountry.isHidden      = true
+        }
+    }
+    
+    @objc func reloadRefreshControl(control:UIRefreshControl)  {
+        fetchCountryData()
+    }
+    
     func fetchCountryData() {
         CountryInfoWebAPI.getCountryInfo(completionHandler: {[weak self] response in
             switch response {
@@ -38,7 +63,13 @@ class ViewController: UIViewController {
     func reloadData(countryData:CountryInformation) {
         self.viewModel.reloadData(data:countryData)
         DispatchQueue.main.async { [unowned self] in
-            self.tableCountry.reloadData()
+            self.refreshControl.endRefreshing()
+            self.title = self.viewModel.title
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                    self.collectionCountry.reloadData()
+                } else {
+                    self.tableCountry.reloadData()
+             }
         }
     }
     
@@ -56,6 +87,8 @@ class ViewController: UIViewController {
     }
 }
 
+
+// MARK: - For iPhone screen design
 extension ViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -70,6 +103,25 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+// MARK: - For iPad design
+extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.numberOfRow()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cellCountry  = collectionView.dequeueReusableCell(withReuseIdentifier: "CountryCollectionViewCell", for: indexPath) as! CountryCollectionViewCell
+        let country = viewModel.objectForIndex(index: indexPath)
+        cellCountry.reloadCell(data: country)
+        return cellCountry
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView .deselectItem(at: indexPath, animated: true)
     }
     
 }

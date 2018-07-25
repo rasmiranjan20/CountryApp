@@ -46,7 +46,8 @@ class WebServiceWrapper: NSObject {
         let request = Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.prettyPrinted, headers: nil)
         let imagedownloadqueue = DispatchQueue(label: "com.rasmiranjan20.imagedownloadqueue")
         request.responseData(queue: imagedownloadqueue) { dataResponse in
-            if let data = dataResponse.data {
+            if let data = dataResponse.data,
+                let response = dataResponse.response , response.statusCode == 200 {
                 completionHandler?(.success(data: data))
             } else if let error = dataResponse.error {
                 completionHandler?(.failedWithError(error: error))

@@ -31,7 +31,7 @@ class CountryCellViewModel: NSObject {
                         ImageDownloader.storeInCache(path: self.country.imageHref, data: data)
                         completionHandler(UIImage(data: data))
                     default:
-                        completionHandler(nil)
+                        completionHandler(UIImage(named: "no_icon"))
                 }
             }
         }

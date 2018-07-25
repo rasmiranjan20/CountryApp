@@ -32,6 +32,8 @@
 		AAE73B572107C9D7001DF103 /* CountryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE73B522107C7B3001DF103 /* CountryCellViewModel.swift */; };
 		AAE73B602107D062001DF103 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE73B5F2107D062001DF103 /* ImageDownloader.swift */; };
 		AAE73B612107D07D001DF103 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE73B5F2107D062001DF103 /* ImageDownloader.swift */; };
+		AAEF19A62108DC7300E94C98 /* CountryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEF19A52108DC7300E94C98 /* CountryCollectionViewCell.swift */; };
+		AAEF19A72108DCE300E94C98 /* CountryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEF19A52108DC7300E94C98 /* CountryCollectionViewCell.swift */; };
 		B3231A236221D49F6B9E4E17 /* Pods_CountryAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A8D35CD208FA5F8FD387E7 /* Pods_CountryAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +95,7 @@
 		AAE73B522107C7B3001DF103 /* CountryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCellViewModel.swift; sourceTree = "<group>"; };
 		AAE73B542107C7D5001DF103 /* ViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerViewModel.swift; sourceTree = "<group>"; };
 		AAE73B5F2107D062001DF103 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		AAEF19A52108DC7300E94C98 /* CountryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCollectionViewCell.swift; sourceTree = "<group>"; };
 		B8A8D35CD208FA5F8FD387E7 /* Pods_CountryAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CountryAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D64D2CDAF0E1E010F20E38CC /* Pods-CountryAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountryAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CountryAppUITests/Pods-CountryAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DCC91C5ECDAEFEF11BA9F350 /* Pods-CountryAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountryAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CountryAppUITests/Pods-CountryAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -192,6 +195,7 @@
 				AAE73B542107C7D5001DF103 /* ViewControllerViewModel.swift */,
 				AAE73B522107C7B3001DF103 /* CountryCellViewModel.swift */,
 				AAE73B4F2107C24A001DF103 /* CountryTableViewCell.swift */,
+				AAEF19A52108DC7300E94C98 /* CountryCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -479,6 +483,7 @@
 				AAE73B502107C24A001DF103 /* CountryTableViewCell.swift in Sources */,
 				AAE73B552107C7D5001DF103 /* ViewControllerViewModel.swift in Sources */,
 				AA31A6BE2106473000A90B1B /* AppDelegate.swift in Sources */,
+				AAEF19A62108DC7300E94C98 /* CountryCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +492,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAE73B512107C2C7001DF103 /* CountryTableViewCell.swift in Sources */,
+				AAEF19A72108DCE300E94C98 /* CountryCollectionViewCell.swift in Sources */,
 				AA6367B021070E7500F0B540 /* CountryInfoWebAPI.swift in Sources */,
 				AA6367AE21070E6900F0B540 /* ViewController.swift in Sources */,
 				AA6B26152106691700389873 /* WebServiceWrapper.swift in Sources */,
@@ -593,7 +599,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
@@ -653,7 +659,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -675,7 +681,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CountryApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -700,7 +706,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CountryApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
