@@ -11,8 +11,9 @@ import UIKit
 class CountryCellViewModel: NSObject {
     
     var country         : CountryInfoModel!
-    func reload(data:CountryInfoModel) {
-        country         = data
+    required init(load:CountryInfoModel) {
+        super.init()
+        country         = load
     }
     func title() -> String {
         return country.title
@@ -20,9 +21,12 @@ class CountryCellViewModel: NSObject {
     func information() -> String {
         return country.countryDescription
     }
+    
     func showThumbnail(completionHandler:@escaping(UIImage?)->Void) -> UIImage? {
         if let data = ImageDownloader.fetchFromCache(path: country.imageHref) {
-            return UIImage(data: data)
+            let image = UIImage(data: data)
+            completionHandler(image)
+            return image
         }
         else if country.imageHref.count > 0 {
             ImageDownloader.downloadImage(path: country.imageHref) {[unowned self] response in

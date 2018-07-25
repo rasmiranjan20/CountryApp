@@ -13,13 +13,13 @@ class CountryTableViewCell: UITableViewCell {
     @IBOutlet weak var imageThumbnail: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblDescription: UILabel!
-    lazy var viewModel = CountryCellViewModel()
+    var viewModel       : CountryCellViewModel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     func reloadCell(data:CountryInfoModel) {
-        viewModel.reload(data: data)
+        viewModel = CountryCellViewModel(load: data)
         lblTitle.text          = viewModel.title()
         lblDescription.text    = viewModel.information()
         imageThumbnail.image   = viewModel.showThumbnail(completionHandler: {[weak self] image in
