@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// View model class for Tableview and collection view cell.
 class CountryCellViewModel: NSObject {
     
     var country         : CountryInfoModel!

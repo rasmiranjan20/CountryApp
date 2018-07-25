@@ -15,7 +15,16 @@ public enum WebServiceResponse {
     case failedWithMessage(message:String)
 }
 
+/// This Class is used as Wrapping web service. No need to import 3rd party library in every class
 class WebServiceWrapper: NSObject {
+    
+    
+    /// Default get method for web service call
+    ///
+    /// - Parameters:
+    ///   - urlPath: url path
+    ///   - param: Webservice parameter
+    ///   - completionHandler: Callback clousere for passing messag.
     class func callHTTPGetService(_ urlPath:String, param:[String: Any]?, completionHandler:((WebServiceResponse)->Void)?)  {
         guard let url = URL(string: urlPath) else
         {
@@ -36,6 +45,11 @@ class WebServiceWrapper: NSObject {
         }
     }
     
+    /// Download Image Class
+    ///
+    /// - Parameters:
+    ///   - urlPath: Image web service path
+    ///   - completionHandler: Callback clousere for passing messag.
     class func downloadImage(_ urlPath:String, completionHandler:((WebServiceResponse)->Void)?)  {
         guard let url = URL(string: urlPath) else
         {
@@ -44,6 +58,7 @@ class WebServiceWrapper: NSObject {
         }
         print("image download ::\(urlPath)")
         let request = Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.prettyPrinted, headers: nil)
+        Alamofire.URLSessionConfiguration.default.timeoutIntervalForRequest = 60
         let imagedownloadqueue = DispatchQueue(label: "com.rasmiranjan20.imagedownloadqueue")
         request.responseData(queue: imagedownloadqueue) { dataResponse in
             if let data = dataResponse.data,

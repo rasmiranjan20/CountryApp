@@ -21,6 +21,7 @@ enum CountryInfoResponse {
     case failedWithMessage(message:String)
 }
 
+///Country API Call
 class CountryInfoWebAPI: NSObject {
     class func getCountryInfo(completionHandler:@escaping(CountryInfoResponse)->Void) {
         WebServiceWrapper.callHTTPGetService(CountryInfoAPI.countryInfo.rawValue, param: nil) { response in
@@ -35,6 +36,10 @@ class CountryInfoWebAPI: NSObject {
         }
     }
     
+    /// Parse Country data
+    ///
+    /// - Parameter data: Raw data which received from cloud
+    /// - Returns: return CountryInformation
     class func parseCountryData(data:Data) -> CountryInformation {
         if let validJsonString = String(data: data, encoding: .isoLatin1), let convertData = (validJsonString.data(using: .utf8)) {
             do {

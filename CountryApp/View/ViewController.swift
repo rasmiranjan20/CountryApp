@@ -45,6 +45,7 @@ class ViewController: UIViewController {
         fetchCountryData()
     }
     
+    /// Fetch data.
     func fetchCountryData() {
         CountryInfoWebAPI.getCountryInfo(completionHandler: {[weak self] response in
             switch response {
