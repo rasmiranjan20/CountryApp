@@ -162,7 +162,6 @@
 				AA31A6C12106473000A90B1B /* Main.storyboard */,
 				AA31A6EF2106528500A90B1B /* Constraints */,
 				AA31A6F02106528500A90B1B /* Model */,
-				AA31A6F12106528500A90B1B /* Resources */,
 				AA31A6EE2106528500A90B1B /* View */,
 				AA6367A92106FE4E00F0B540 /* WebServiceAccessLayer */,
 				AA6B2612210668ED00389873 /* Wrapper */,
@@ -220,13 +219,6 @@
 				AA6367AC2106FFF100F0B540 /* CountryInfoModel.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		AA31A6F12106528500A90B1B /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		AA6367A92106FE4E00F0B540 /* WebServiceAccessLayer */ = {
