@@ -39,6 +39,8 @@ class CountryCellViewModel: NSObject {
                         completionHandler(UIImage(named: "no_icon"))
                 }
             }
+        } else {
+            completionHandler(UIImage(named: "no_icon"))
         }
         return UIImage(named: "no_icon")
     }

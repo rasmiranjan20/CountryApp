@@ -17,6 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if AppConstraints.IS_STORYBOARD_NOT_REQUIRED {
+            let navCountry = UINavigationController(rootViewController: ViewController())
+            navCountry.view.backgroundColor = .white
+            window?.rootViewController = navCountry
+        }
         return true
     }
 

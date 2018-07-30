@@ -36,6 +36,8 @@
 		AAEF19A72108DCE300E94C98 /* CountryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEF19A52108DC7300E94C98 /* CountryCollectionViewCell.swift */; };
 		AAEF19B42108FFC800E94C98 /* CountryInfoWebAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEF19B32108FFC800E94C98 /* CountryInfoWebAPITest.swift */; };
 		AAEF19B62109048D00E94C98 /* ViewControllerViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEF19B52109048D00E94C98 /* ViewControllerViewModelTest.swift */; };
+		AAF47988210F9966005ED51A /* AppConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF47987210F9966005ED51A /* AppConstraints.swift */; };
+		AAF47989210F9B1A005ED51A /* AppConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF47987210F9966005ED51A /* AppConstraints.swift */; };
 		B3231A236221D49F6B9E4E17 /* Pods_CountryAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A8D35CD208FA5F8FD387E7 /* Pods_CountryAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +102,7 @@
 		AAEF19A52108DC7300E94C98 /* CountryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCollectionViewCell.swift; sourceTree = "<group>"; };
 		AAEF19B32108FFC800E94C98 /* CountryInfoWebAPITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryInfoWebAPITest.swift; sourceTree = "<group>"; };
 		AAEF19B52109048D00E94C98 /* ViewControllerViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerViewModelTest.swift; sourceTree = "<group>"; };
+		AAF47987210F9966005ED51A /* AppConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstraints.swift; sourceTree = "<group>"; };
 		B8A8D35CD208FA5F8FD387E7 /* Pods_CountryAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CountryAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D64D2CDAF0E1E010F20E38CC /* Pods-CountryAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountryAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CountryAppUITests/Pods-CountryAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DCC91C5ECDAEFEF11BA9F350 /* Pods-CountryAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CountryAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CountryAppUITests/Pods-CountryAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -209,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				AAE73B5F2107D062001DF103 /* ImageDownloader.swift */,
+				AAF47987210F9966005ED51A /* AppConstraints.swift */,
 			);
 			path = Constraints;
 			sourceTree = "<group>";
@@ -454,11 +458,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CountryApp/Pods-CountryApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,6 +479,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAF47988210F9966005ED51A /* AppConstraints.swift in Sources */,
 				AA6367AB2106FE8E00F0B540 /* CountryInfoWebAPI.swift in Sources */,
 				AA31A6F32106530C00A90B1B /* ViewController.swift in Sources */,
 				AA6367AD2106FFF100F0B540 /* CountryInfoModel.swift in Sources */,
@@ -503,6 +510,7 @@
 				AAEF19B62109048D00E94C98 /* ViewControllerViewModelTest.swift in Sources */,
 				AAE73B612107D07D001DF103 /* ImageDownloader.swift in Sources */,
 				AA31A6D62106473100A90B1B /* CountryAppTests.swift in Sources */,
+				AAF47989210F9B1A005ED51A /* AppConstraints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -681,8 +689,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 527XE45ZDW;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CountryApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -693,7 +701,7 @@
 					"$(inherited)",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mphasis.UNO3-CommunicatorApp";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rasmiranjan20.CountryApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -707,8 +715,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 527XE45ZDW;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CountryApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -719,7 +727,7 @@
 					"$(inherited)",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mphasis.UNO3-CommunicatorApp";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rasmiranjan20.CountryApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;

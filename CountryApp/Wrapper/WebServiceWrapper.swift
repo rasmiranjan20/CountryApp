@@ -61,7 +61,7 @@ lazy var reachability = Reachability()
         let request = Alamofire.request(url, method: .get, parameters: param, encoding: JSONEncoding.prettyPrinted, headers: nil)
         let webserviceQueue = DispatchQueue(label: "com.rasmiranjan20.webserviceQueue")
         request.responseJSON(queue: webserviceQueue) { dataResponse in
-            if let data = dataResponse.data {
+            if let data = dataResponse.data , dataResponse.response != nil {
                 completionHandler?(.success(data: data))
             }
             else if let error = dataResponse.error {
