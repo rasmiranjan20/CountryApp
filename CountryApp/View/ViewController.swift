@@ -47,18 +47,24 @@ class ViewController: UIViewController {
     
     /// Fetch data.
     func fetchCountryData() {
-        CountryInfoWebAPI.getCountryInfo(completionHandler: {[weak self] response in
-            switch response {
-                case .countryData(let data):
-                    self?.reloadData(countryData:data)
-                case .failedWithError(error: let error):
-                    self?.showFilureMessage(message: error.localizedDescription)
-                    self?.reloadData(countryData:(nil, nil))
-                case .failedWithMessage(message: let message):
-                    self?.showFilureMessage(message: message)
-                    self?.reloadData(countryData:(nil, nil))
+            WebServiceWrapper.shared.checkReachability()
+            if WebServiceWrapper.shared.isReachable {
+                 CountryInfoWebAPI.getCountryInfo(completionHandler: {[weak self] response in
+                    switch response {
+                        case .countryData(let data):
+                            self?.reloadData(countryData:data)
+                        case .failedWithError(error: let error):
+                            self?.showFilureMessage(title:"Sorry!", message: error.localizedDescription)
+                            self?.reloadData(countryData:(nil, nil))
+                        case .failedWithMessage(message: let message):
+                            self?.showFilureMessage(title:"Sorry!", message: message)
+                            self?.reloadData(countryData:(nil, nil))
+                    }
+                })
+            } else {
+                showFilureMessage(title: "Sorry!", message: "Please check the internet connection.")
             }
-        })
+        WebServiceWrapper.shared.stopNetworkChecking()
     }
     
     func reloadData(countryData:CountryInformation) {
@@ -74,9 +80,9 @@ class ViewController: UIViewController {
         }
     }
     
-    func showFilureMessage(message:String) {
+    func showFilureMessage(title:String, message:String) {
         DispatchQueue.main.async { [unowned self] in
-            let alert = UIAlertController(title: "Sorry!", message: message, preferredStyle: .alert)
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.navigationController?.present(alert, animated: true, completion: nil)
         }

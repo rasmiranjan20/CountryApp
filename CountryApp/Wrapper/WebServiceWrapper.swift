@@ -8,16 +8,43 @@
 
 import UIKit
 import Alamofire
-
+import Reachability
 public enum WebServiceResponse {
     case success(data:Data)
     case failedWithError(error:Error)
     case failedWithMessage(message:String)
 }
 
+
 /// This Class is used as Wrapping web service. No need to import 3rd party library in every class
 class WebServiceWrapper: NSObject {
     
+static let shared = WebServiceWrapper()
+
+/// Check network reachability.
+public var isReachable = false
+lazy var reachability = Reachability()
+ 
+    func checkReachability() {
+        reachability?.whenReachable = {[weak self] status in
+            switch status.connection {
+            case .none:
+                self?.isReachable = false
+            default:
+                self?.isReachable = true
+            }
+        }
+        do {
+            try reachability? .startNotifier()
+        } catch {
+            print("error ::\(error)")
+        }
+        isReachable = !(reachability?.connection == .none)
+    }
+    
+    func stopNetworkChecking() {
+        reachability? .stopNotifier()
+    }
     
     /// Default get method for web service call
     ///
